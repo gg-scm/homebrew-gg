@@ -18,7 +18,7 @@ class Gg < Formula
   desc "Git with less typing"
   homepage "https://gg-scm.io/"
   url "https://github.com/gg-scm/gg/archive/v1.0.3.tar.gz"
-  sha256 "11fa3efdedcec500106696726b8d523b9e55f4834bc5d0fad7f30ed8498d14ee"
+  sha256 "29f309181f37f27c262508a8447bfbe93ebccaee80ba96e76690b292b4f5e22d"
   license "Apache-2.0"
   head "https://github.com/gg-scm/gg.git"
 
