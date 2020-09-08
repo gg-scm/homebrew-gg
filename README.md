@@ -1,9 +1,16 @@
 # gg Homebrew Tap
 
-## How do I install these formulae?
-`brew install gg-scm/gg/<formula>`
+This repository is a [Homebrew tap][] for [gg][] to simplify installation on
+macOS. After you've installed [Homebrew][], you can install gg by running:
 
-Or `brew tap gg-scm/gg` and then `brew install <formula>`.
+```
+brew install gg-scm/gg/gg
+```
 
-## Documentation
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+[gg]: https://gg-scm.io
+[Homebrew]: https://brew.sh/
+[Homebrew tap]: https://docs.brew.sh/Taps
+
+## License
+
+[Apache 2.0](LICENSE)
