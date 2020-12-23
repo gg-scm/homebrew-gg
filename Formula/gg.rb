@@ -17,24 +17,28 @@
 class Gg < Formula
   desc "Git with less typing"
   homepage "https://gg-scm.io/"
-  url "https://github.com/gg-scm/gg/archive/v1.0.3.tar.gz"
-  sha256 "29f309181f37f27c262508a8447bfbe93ebccaee80ba96e76690b292b4f5e22d"
+  url "https://github.com/gg-scm/gg/archive/v1.1.0.tar.gz"
+  sha256 "d206c8d31d4a20ccd60415e3481fedda660904862e340957f4b66682589d62da"
   license "Apache-2.0"
-  head "https://github.com/gg-scm/gg.git"
+  head "https://github.com/gg-scm/gg.git", branch: "main"
 
   depends_on "go" => :build
   depends_on "pandoc" => :build
   depends_on "git" => :recommended
 
   def install
-    ENV["GITHUB_SHA"] = "7caba4a4bea97b5beca3c54f8bc2642416c3d106"
+    ENV["GITHUB_SHA"] = "a0b348c9cef33fa46899f5e55e3316f382a09f6a"
     ENV["GO111MODULE"] = "on"
     system "release/build.bash", bin/"gg", version.to_s
     man1.mkpath
     system "pandoc", "--standalone", "--to", "man", "misc/gg.1.md", "-o", man1/"gg.1"
+    bash_completion.mkpath
+    copy "misc/gg.bash", bash_completion/"gg"
+    zsh_completion.mkpath
+    copy "misc/_gg.zsh", zsh_completion/"_gg"
   end
 
   test do
-    assert_match "1.0.3", shell_output("#{bin}/gg --version")
+    assert_match "1.1.0", shell_output("#{bin}/gg --version")
   end
 end
