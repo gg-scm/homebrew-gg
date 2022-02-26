@@ -17,8 +17,8 @@
 class Gg < Formula
   desc "Git with less typing"
   homepage "https://gg-scm.io/"
-  url "https://github.com/gg-scm/gg/archive/v1.2.0.tar.gz"
-  sha256 "741df022a1583d17fd1bf4fca1b15d305796f91a22d436a034288f47e662898a"
+  url "https://github.com/gg-scm/gg/archive/v1.2.1.tar.gz"
+  sha256 "d07a437bbf4758a807e1135895767239daf4b8c89389e91c3adb5002a2a5667f"
   license "Apache-2.0"
   head "https://github.com/gg-scm/gg.git", branch: "main"
 
@@ -27,7 +27,7 @@ class Gg < Formula
   depends_on "git" => :recommended
 
   def install
-    ENV["GITHUB_SHA"] = "4c319a5f46f9b89b9ea2163931015a089d22c89c"
+    ENV["GITHUB_SHA"] = "eed9dc7c82c5a7fbc13fd9b496e1faaec3f20d57"
     ENV["GO111MODULE"] = "on"
     system "release/build.bash", bin/"gg", version.to_s
     man1.mkpath
@@ -39,6 +39,6 @@ class Gg < Formula
   end
 
   test do
-    assert_match "1.2.0", shell_output("#{bin}/gg --version")
+    assert_match "1.2.1", shell_output("#{bin}/gg --version")
   end
 end
